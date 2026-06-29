@@ -1,15 +1,18 @@
 import { useEffect, useMemo, useState } from "react";
-import { loadIndex, loadPlant } from "./api/plantDbClient";
+import { loadClimate, loadIndex, loadPlant } from "./api/plantDbClient";
 import { PhenologyTimeline } from "./components/PhenologyTimeline";
 import { TemperatureChart } from "./components/TemperatureChart";
+import { ClimateOverlayChart } from "./components/ClimateOverlayChart";
 import { LifecycleDiagram } from "./components/LifecycleDiagram";
-import type { PlantDbIndex, PlantRecord } from "./types";
+import type { ClimateProfile, PlantDbIndex, PlantRecord } from "./types";
 import "./styles.css";
 
 export function App() {
   const [index, setIndex] = useState<PlantDbIndex | null>(null);
   const [selectedSpeciesId, setSelectedSpeciesId] = useState<string | null>(null);
+  const [selectedLocationId, setSelectedLocationId] = useState<string | null>(null);
   const [plant, setPlant] = useState<PlantRecord | null>(null);
+  const [climate, setClimate] = useState<ClimateProfile | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -18,6 +21,7 @@ export function App() {
       .then((data) => {
         setIndex(data);
         setSelectedSpeciesId(data.species[0]?.id ?? null);
+        setSelectedLocationId(data.locations[0]?.id ?? null);
       })
       .catch((err: Error) => setError(err.message))
       .finally(() => setLoading(false));
@@ -36,6 +40,18 @@ export function App() {
     () => index?.species.find((item) => item.id === selectedSpeciesId),
     [index, selectedSpeciesId]
   );
+
+  const selectedLocation = useMemo(
+    () => index?.locations.find((item) => item.id === selectedLocationId),
+    [index, selectedLocationId]
+  );
+
+  useEffect(() => {
+    if (!selectedLocation?.climate_url) return;
+    loadClimate(selectedLocation.climate_url)
+      .then(setClimate)
+      .catch((err: Error) => setError(err.message));
+  }, [selectedLocation?.climate_url]);
 
   return (
     <main className="shell">
@@ -69,6 +85,18 @@ export function App() {
               <span>{species.latin_name}</span>
             </button>
           ))}
+
+          <h2 className="sidebar-section">Climate</h2>
+          {index?.locations.map((location) => (
+            <button
+              key={location.id}
+              className={location.id === selectedLocationId ? "species-button active" : "species-button"}
+              onClick={() => setSelectedLocationId(location.id)}
+            >
+              <strong>{location.name}</strong>
+              <span>{location.country}</span>
+            </button>
+          ))}
         </aside>
 
         <section className="content">
@@ -86,7 +114,8 @@ export function App() {
                 <div className="facts">
                   <span>Lifecycle: {plant.species.life_cycle}</span>
                   <span>Type: {plant.species.plant_type}</span>
-                  <span>Source: {selectedSummary?.data_url}</span>
+                  <span>Plant source: {selectedSummary?.data_url}</span>
+                  <span>Climate: {selectedLocation?.name ?? "not selected"}</span>
                 </div>
               </article>
 
@@ -97,6 +126,12 @@ export function App() {
               <article className="card">
                 <TemperatureChart plant={plant} />
               </article>
+
+              {climate && (
+                <article className="card">
+                  <ClimateOverlayChart climate={climate} plant={plant} />
+                </article>
+              )}
 
               <article className="card">
                 <h2>Lifecycle diagram</h2>
