@@ -1,14 +1,5 @@
 {
-  "species": {
-    "id": "solanum_lycopersicum",
-    "latin_name": "Solanum lycopersicum",
-    "common_name_bg": "Домат",
-    "common_name_en": "Tomato",
-    "family": "Solanaceae",
-    "life_cycle": "annual",
-    "plant_type": "warm_season_fruiting_crop",
-    "notes": "Warm-season frost-sensitive crop. Ideal values are baseline biological ranges and should be adapted by cultivar, local temperature, light, water and growing system."
-  },
+  "species": {"id": "solanum_lycopersicum", "latin_name": "Solanum lycopersicum", "common_name_bg": "Домат", "common_name_en": "Tomato", "family": "Solanaceae", "life_cycle": "annual", "plant_type": "warm_season_fruiting_crop", "notes": "Warm-season frost-sensitive crop. Stage-specific conditions should be adapted by cultivar, local temperature, light, water and growing system."},
   "ideal_conditions": {
     "germination": {"soil_temp_c": {"min": 12, "optimum_min": 24, "optimum_max": 29, "max": 35}, "emergence_days": {"min": 5, "max": 10}},
     "vegetative_growth": {"day_temp_c": {"min": 21, "max": 27}, "night_temp_c": {"min": 16, "max": 20}},
@@ -17,6 +8,14 @@
     "light": {"sunlight_min_hours": 6, "sunlight_opt_hours": 8},
     "soil": {"ph_min": 6.0, "ph_max": 6.8, "drainage": "good", "fertility": "medium_high"}
   },
+  "growth_stages": [
+    {"stage_key":"germination","stage_name_bg":"Покълване","stage_type":"start","days_after_emergence_min":-10,"days_after_emergence_max":0,"requirements":{"soil_temp_c":{"min":12,"optimum_min":24,"optimum_max":29,"max":35},"air_temp_c":{"min":18,"optimum_min":22,"optimum_max":28,"max":34},"sunlight_hours":{"min":0,"optimum_min":0,"optimum_max":12},"humidity_percent":{"min":60,"optimum_min":75,"optimum_max":90,"max":95},"soil_moisture_percent":{"min":60,"optimum_min":70,"optimum_max":85,"max":95},"water_need":"even_moist"},"limiting_factors":["cold_soil","waterlogging","old_seed"]},
+    {"stage_key":"seedling","stage_name_bg":"Разсад","stage_type":"establishment","days_after_emergence_min":0,"days_after_emergence_max":35,"requirements":{"air_temp_c":{"min":14,"optimum_min":20,"optimum_max":26,"max":32},"soil_temp_c":{"min":14,"optimum_min":18,"optimum_max":24,"max":30},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"humidity_percent":{"min":45,"optimum_min":55,"optimum_max":75,"max":90},"soil_moisture_percent":{"min":50,"optimum_min":60,"optimum_max":75,"max":90},"water_need":"moderate_even","nutrient_need":"balanced_low"},"limiting_factors":["low_light","cold","damping_off"]},
+    {"stage_key":"vegetative_growth","stage_name_bg":"Вегетативен растеж","stage_type":"growth","days_after_emergence_min":30,"days_after_emergence_max":60,"requirements":{"air_temp_c":{"min":16,"optimum_min":21,"optimum_max":27,"max":34},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"humidity_percent":{"min":40,"optimum_min":50,"optimum_max":70,"max":85},"soil_moisture_percent":{"min":50,"optimum_min":60,"optimum_max":75,"max":90},"water_need":"moderate","nutrient_need":"balanced_nitrogen"},"limiting_factors":["shade","cold_nights","nitrogen_deficit"]},
+    {"stage_key":"flowering_pollination","stage_name_bg":"Цъфтеж и опрашване","stage_type":"reproduction","days_after_emergence_min":45,"days_after_emergence_max":80,"requirements":{"air_temp_c":{"min":16,"optimum_min":20,"optimum_max":26,"max":32},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"humidity_percent":{"min":40,"optimum_min":50,"optimum_max":70,"max":85},"soil_moisture_percent":{"min":50,"optimum_min":60,"optimum_max":75,"max":90},"water_need":"stable_moderate","nutrient_need":"phosphorus_potassium_balanced","pollinator_activity":"not_required_self_pollinating"},"limiting_factors":["heat","cold_nights","low_light","water_stress"]},
+    {"stage_key":"fruit_growth","stage_name_bg":"Нарастване на плодове","stage_type":"yield_building","days_after_emergence_min":60,"days_after_emergence_max":110,"requirements":{"air_temp_c":{"min":18,"optimum_min":22,"optimum_max":28,"max":34},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"humidity_percent":{"min":40,"optimum_min":50,"optimum_max":70,"max":85},"soil_moisture_percent":{"min":55,"optimum_min":65,"optimum_max":80,"max":90},"water_need":"high_even","nutrient_need":"potassium_calcium_balanced"},"limiting_factors":["irregular_watering","calcium_deficit","heat","shade"]},
+    {"stage_key":"fruit_maturity","stage_name_bg":"Узряване","stage_type":"maturity","days_after_emergence_min":75,"days_after_emergence_max":130,"requirements":{"air_temp_c":{"min":15,"optimum_min":18,"optimum_max":26,"max":32},"sunlight_hours":{"min":5,"optimum_min":7,"optimum_max":12},"humidity_percent":{"min":35,"optimum_min":45,"optimum_max":65,"max":85},"soil_moisture_percent":{"min":40,"optimum_min":50,"optimum_max":70,"max":85},"water_need":"moderate_reduced","nutrient_need":"potassium"},"limiting_factors":["cold","frost","excess_water","low_sun"]}
+  ],
   "phenology": [
     {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
     {"stage_key": "first_true_leaf", "stage_name_bg": "Първи истински лист", "days_after_emergence_min": 7, "days_after_emergence_max": 14},
