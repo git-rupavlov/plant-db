@@ -20,6 +20,32 @@ export interface LocationSummary {
   name: string;
   country: string;
   data_url: string;
+  climate_url?: string;
+}
+
+export interface ClimateProfile {
+  id: string;
+  location_id: string;
+  label: string;
+  units: {
+    temperature: string;
+    precipitation: string;
+    sun_hours: string;
+    gdd_base10: string;
+  };
+  months: MonthlyClimate[];
+}
+
+export interface MonthlyClimate {
+  month: number;
+  label: string;
+  avg_min_c: number;
+  avg_mean_c: number;
+  avg_max_c: number;
+  precip_mm: number;
+  frost_level: number;
+  sun_hours: number;
+  gdd_base10: number;
 }
 
 export interface PlantRecord {
