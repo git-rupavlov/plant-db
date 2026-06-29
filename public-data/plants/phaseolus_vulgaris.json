@@ -1,0 +1,38 @@
+{
+  "species": {
+    "id": "phaseolus_vulgaris",
+    "latin_name": "Phaseolus vulgaris",
+    "common_name_bg": "Фасул / зелен боб",
+    "common_name_en": "Common bean",
+    "family": "Fabaceae",
+    "life_cycle": "annual",
+    "plant_type": "warm_season_legume",
+    "notes": "Warm-season legume. Useful for food, nitrogen fixation and vertical biomass, but it still demands warmth because apparently beans have standards."
+  },
+  "ideal_conditions": {
+    "germination": {"soil_temp_c": {"min": 12, "optimum_min": 21, "optimum_max": 30, "max": 35}, "emergence_days": {"min": 5, "max": 10}},
+    "vegetative_growth": {"day_temp_c": {"min": 20, "max": 28}, "night_temp_c": {"min": 15, "max": 20}},
+    "flowering": {"optimum_temp_c": {"min": 20, "max": 27}},
+    "fruiting": {"optimum_temp_c": {"min": 20, "max": 28}},
+    "light": {"sunlight_min_hours": 6, "sunlight_opt_hours": 8},
+    "soil": {"ph_min": 6.0, "ph_max": 7.5, "drainage": "good", "fertility": "medium"}
+  },
+  "phenology": [
+    {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
+    {"stage_key": "first_true_leaves", "stage_name_bg": "Първи истински листа", "days_after_emergence_min": 5, "days_after_emergence_max": 12},
+    {"stage_key": "rapid_vine_growth", "stage_name_bg": "Бърз вегетативен растеж", "days_after_emergence_min": 15, "days_after_emergence_max": 30},
+    {"stage_key": "first_flowers", "stage_name_bg": "Първи цветове", "days_after_emergence_min": 30, "days_after_emergence_max": 45},
+    {"stage_key": "green_pods", "stage_name_bg": "Зелени шушулки", "days_after_emergence_min": 45, "days_after_emergence_max": 65},
+    {"stage_key": "dry_seed", "stage_name_bg": "Сухо семе", "days_after_emergence_min": 80, "days_after_emergence_max": 110}
+  ],
+  "stress_responses": [
+    {"stress_key": "cold_soil", "condition_description": "Soil below 12°C during germination.", "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "Poor emergence and seed rot risk."},
+    {"stress_key": "frost", "condition_description": "Air temperature at or below 0°C.", "effect_growth_percent": -100, "notes": "Usually fatal."},
+    {"stress_key": "drought_flowering", "condition_description": "Dry soil during flowering and pod set.", "effect_growth_percent": -30, "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "Reduces pod set."},
+    {"stress_key": "nitrogen_excess", "condition_description": "Excess available nitrogen.", "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "More leaf growth, weaker pod focus."}
+  ],
+  "cultivars": [
+    {"id": "generic_bush_bean", "cultivar_name": "Generic bush bean", "maturity_days_min": 45, "maturity_days_max": 60, "fruits_per_plant_min": 15, "fruits_per_plant_max": 40},
+    {"id": "generic_pole_bean", "cultivar_name": "Generic pole bean", "maturity_days_min": 60, "maturity_days_max": 85, "fruits_per_plant_min": 30, "fruits_per_plant_max": 100}
+  ]
+}
