@@ -1,0 +1,25 @@
+{
+  "id": "sofia_bg_monthly",
+  "location_id": "sofia_bg",
+  "label": "Sofia monthly climate profile",
+  "units": {
+    "temperature": "celsius",
+    "precipitation": "mm",
+    "sun_hours": "hours_per_day",
+    "gdd_base10": "degree_days"
+  },
+  "months": [
+    {"month": 1, "label": "Jan", "avg_min_c": -4, "avg_mean_c": 0, "avg_max_c": 4, "precip_mm": 35, "frost_level": 3, "sun_hours": 2.5, "gdd_base10": 0},
+    {"month": 2, "label": "Feb", "avg_min_c": -2, "avg_mean_c": 2, "avg_max_c": 7, "precip_mm": 32, "frost_level": 3, "sun_hours": 3.5, "gdd_base10": 0},
+    {"month": 3, "label": "Mar", "avg_min_c": 2, "avg_mean_c": 7, "avg_max_c": 13, "precip_mm": 40, "frost_level": 2, "sun_hours": 5.0, "gdd_base10": 0},
+    {"month": 4, "label": "Apr", "avg_min_c": 6, "avg_mean_c": 12, "avg_max_c": 18, "precip_mm": 55, "frost_level": 2, "sun_hours": 6.0, "gdd_base10": 60},
+    {"month": 5, "label": "May", "avg_min_c": 11, "avg_mean_c": 17, "avg_max_c": 23, "precip_mm": 75, "frost_level": 1, "sun_hours": 7.5, "gdd_base10": 210},
+    {"month": 6, "label": "Jun", "avg_min_c": 15, "avg_mean_c": 21, "avg_max_c": 27, "precip_mm": 80, "frost_level": 0, "sun_hours": 8.5, "gdd_base10": 330},
+    {"month": 7, "label": "Jul", "avg_min_c": 17, "avg_mean_c": 23, "avg_max_c": 30, "precip_mm": 60, "frost_level": 0, "sun_hours": 9.5, "gdd_base10": 403},
+    {"month": 8, "label": "Aug", "avg_min_c": 17, "avg_mean_c": 23, "avg_max_c": 30, "precip_mm": 45, "frost_level": 0, "sun_hours": 9.0, "gdd_base10": 403},
+    {"month": 9, "label": "Sep", "avg_min_c": 13, "avg_mean_c": 18, "avg_max_c": 25, "precip_mm": 45, "frost_level": 1, "sun_hours": 7.0, "gdd_base10": 240},
+    {"month": 10, "label": "Oct", "avg_min_c": 7, "avg_mean_c": 12, "avg_max_c": 18, "precip_mm": 50, "frost_level": 2, "sun_hours": 5.0, "gdd_base10": 60},
+    {"month": 11, "label": "Nov", "avg_min_c": 2, "avg_mean_c": 6, "avg_max_c": 11, "precip_mm": 45, "frost_level": 3, "sun_hours": 3.0, "gdd_base10": 0},
+    {"month": 12, "label": "Dec", "avg_min_c": -2, "avg_mean_c": 1, "avg_max_c": 5, "precip_mm": 40, "frost_level": 3, "sun_hours": 2.0, "gdd_base10": 0}
+  ]
+}
