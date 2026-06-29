@@ -1,0 +1,140 @@
+species:
+  id: cucurbita_moschata
+  latin_name: Cucurbita moschata
+  common_name_bg: Тиква цигулка / мускатна тиква
+  common_name_en: Butternut / winter squash
+  family: Cucurbitaceae
+  life_cycle: annual
+  plant_type: warm_season_vining_crop
+  notes: >
+    Frost-sensitive warm-season crop. Best modeled by ideal biology first,
+    then adapted through temperature, soil warmth, water stress, sunlight,
+    and local season length.
+
+ideal_conditions:
+  germination:
+    soil_temp_c:
+      min: 16
+      optimum_min: 25
+      optimum_max: 30
+      max: 35
+    emergence_days:
+      min: 4
+      max: 8
+
+  vegetative_growth:
+    day_temp_c:
+      min: 24
+      max: 30
+    night_temp_c:
+      min: 18
+      max: 22
+
+  flowering:
+    optimum_temp_c:
+      min: 20
+      max: 30
+
+  fruiting:
+    optimum_temp_c:
+      min: 22
+      max: 30
+
+  light:
+    sunlight_min_hours: 8
+    sunlight_opt_hours: 10
+
+  soil:
+    ph_min: 6.0
+    ph_max: 7.2
+    drainage: good
+    fertility: high_organic_matter
+
+phenology:
+  - stage_key: emergence
+    stage_name_bg: Поникване
+    days_after_emergence_min: 0
+    days_after_emergence_max: 0
+    notes: Counted as day zero.
+
+  - stage_key: first_true_leaf
+    stage_name_bg: Първи истински лист
+    days_after_emergence_min: 5
+    days_after_emergence_max: 10
+
+  - stage_key: vining_start
+    stage_name_bg: Начало на ластуни
+    days_after_emergence_min: 20
+    days_after_emergence_max: 35
+
+  - stage_key: first_male_flowers
+    stage_name_bg: Първи мъжки цветове
+    days_after_emergence_min: 35
+    days_after_emergence_max: 45
+
+  - stage_key: first_female_flowers
+    stage_name_bg: Първи женски цветове
+    days_after_emergence_min: 45
+    days_after_emergence_max: 60
+
+  - stage_key: fruit_set
+    stage_name_bg: Завръз
+    days_after_emergence_min: 50
+    days_after_emergence_max: 70
+
+  - stage_key: harvest_mature
+    stage_name_bg: Зряла тиква
+    days_after_emergence_min: 90
+    days_after_emergence_max: 120
+
+  - stage_key: seed_maturity
+    stage_name_bg: Узрели семена
+    days_after_emergence_min: 110
+    days_after_emergence_max: 140
+
+stress_responses:
+  - stress_key: cold_soil
+    condition_description: Soil below 16°C during germination.
+    effect_days_delay_min: 4
+    effect_days_delay_max: 14
+    notes: May cause rot or uneven emergence.
+
+  - stress_key: frost
+    condition_description: Air temperature at or below 0°C.
+    effect_growth_percent: -100
+    notes: Usually fatal.
+
+  - stress_key: drought
+    condition_description: Dry soil during flowering and fruit set.
+    effect_growth_percent: -30
+    effect_days_delay_min: 5
+    effect_days_delay_max: 20
+    notes: Reduces fruit set and final fruit size.
+
+  - stress_key: shade
+    condition_description: Less than 6 hours direct sun.
+    effect_growth_percent: -25
+    effect_days_delay_min: 10
+    effect_days_delay_max: 25
+    notes: More leaves, poorer flowering and fruit maturity.
+
+cultivars:
+  - id: matilda_f1
+    cultivar_name: Matilda F1
+    maturity_days_min: 90
+    maturity_days_max: 105
+    average_fruit_weight_kg: 3.5
+    fruits_per_plant_min: 2
+    fruits_per_plant_max: 5
+    storage_months_min: 4
+    storage_months_max: 8
+
+  - id: waltham_butternut
+    cultivar_name: Waltham Butternut
+    maturity_days_min: 100
+    maturity_days_max: 120
+    average_fruit_weight_kg: 1.5
+    fruits_per_plant_min: 3
+    fruits_per_plant_max: 6
+    storage_months_min: 3
+    storage_months_max: 6
