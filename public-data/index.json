@@ -1,0 +1,23 @@
+{
+  "dataset": "plant-db",
+  "version": "0.1.0",
+  "source_repo": "git-rupavlov/plant-db",
+  "source_branch": "main",
+  "species": [
+    {
+      "id": "cucurbita_moschata",
+      "latin_name": "Cucurbita moschata",
+      "common_name_bg": "Тиква цигулка / мускатна тиква",
+      "common_name_en": "Butternut / winter squash",
+      "data_url": "public-data/plants/cucurbita_moschata.json"
+    }
+  ],
+  "locations": [
+    {
+      "id": "sofia_bg",
+      "name": "Sofia",
+      "country": "Bulgaria",
+      "data_url": "public-data/locations/sofia_bg.json"
+    }
+  ]
+}
