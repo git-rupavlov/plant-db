@@ -4,6 +4,7 @@ import { PhenologyTimeline } from "./components/PhenologyTimeline";
 import { TemperatureChart } from "./components/TemperatureChart";
 import { ClimateOverlayChart } from "./components/ClimateOverlayChart";
 import { LifecycleDiagram } from "./components/LifecycleDiagram";
+import { StageRequirementsTable } from "./components/StageRequirementsTable";
 import type { ClimateProfile, PlantDbIndex, PlantRecord } from "./types";
 import "./styles.css";
 
@@ -60,7 +61,7 @@ export function App() {
           <p className="eyebrow">Remote Git data • local Linux UI</p>
           <h1>Plant DB</h1>
           <p className="subtitle">
-            Local visual explorer for plant phenology, ideal conditions and climate adaptation.
+            Local visual explorer for plant phenology, stage requirements and climate adaptation.
             Data is fetched live from GitHub JSON, because apparently even vegetables need an API contract now.
           </p>
         </div>
@@ -121,6 +122,11 @@ export function App() {
 
               <article className="card">
                 <PhenologyTimeline stages={plant.phenology} />
+              </article>
+
+              <article className="card">
+                <h2>Stage requirements</h2>
+                <StageRequirementsTable stages={plant.growth_stages} />
               </article>
 
               <article className="card">
