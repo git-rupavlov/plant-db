@@ -1,0 +1,29 @@
+location:
+  id: sofia_bg
+  name: Sofia
+  country: Bulgaria
+  region: Sofia City
+  latitude: 42.6977
+  longitude: 23.3219
+  elevation_m: 550
+  koppen: Cfb/Dfb transitional
+  usda_zone: 7a approximate
+  avg_last_frost: mid-April
+  avg_first_frost: late-October
+  notes: >
+    Urban microclimates vary strongly. Balconies, south-facing slopes,
+    concrete heat storage, wind exposure, and soil moisture can shift plant
+    timing by weeks.
+
+local_modifiers:
+  - modifier_key: southeast_balcony
+    description: Southeast balcony with morning and early afternoon sun.
+    expected_effect: Earlier warming, but possible afternoon light limitation.
+
+  - modifier_key: open_field_vartopo
+    description: Open field / meadow terrain with wind and variable soil.
+    expected_effect: Higher temperature swings, higher drying, later spring start.
+
+  - modifier_key: greenhouse_unheated
+    description: Unheated small greenhouse or plastic cover.
+    expected_effect: Faster spring start, higher heat stress risk in summer.
