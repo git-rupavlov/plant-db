@@ -1,0 +1,36 @@
+{
+  "species": {
+    "id": "pisum_sativum",
+    "latin_name": "Pisum sativum",
+    "common_name_bg": "Грах",
+    "common_name_en": "Pea",
+    "family": "Fabaceae",
+    "life_cycle": "annual",
+    "plant_type": "cool_season_legume",
+    "notes": "Cool-season legume. Better for spring/autumn than peak summer, because unlike humans it knows when to stop working in heat."
+  },
+  "ideal_conditions": {
+    "germination": {"soil_temp_c": {"min": 4, "optimum_min": 10, "optimum_max": 20, "max": 28}, "emergence_days": {"min": 7, "max": 14}},
+    "vegetative_growth": {"day_temp_c": {"min": 13, "max": 20}, "night_temp_c": {"min": 7, "max": 13}},
+    "flowering": {"optimum_temp_c": {"min": 13, "max": 21}},
+    "fruiting": {"optimum_temp_c": {"min": 13, "max": 21}},
+    "light": {"sunlight_min_hours": 5, "sunlight_opt_hours": 7},
+    "soil": {"ph_min": 6.0, "ph_max": 7.5, "drainage": "good", "fertility": "medium"}
+  },
+  "phenology": [
+    {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
+    {"stage_key": "tendrils", "stage_name_bg": "Мустаци / катерене", "days_after_emergence_min": 15, "days_after_emergence_max": 30},
+    {"stage_key": "first_flowers", "stage_name_bg": "Първи цветове", "days_after_emergence_min": 30, "days_after_emergence_max": 50},
+    {"stage_key": "green_pods", "stage_name_bg": "Зелени шушулки", "days_after_emergence_min": 50, "days_after_emergence_max": 70},
+    {"stage_key": "dry_seed", "stage_name_bg": "Сухо семе", "days_after_emergence_min": 80, "days_after_emergence_max": 110}
+  ],
+  "stress_responses": [
+    {"stress_key": "heat", "condition_description": "Sustained temperatures above 26-28°C.", "effect_days_delay_min": 5, "effect_days_delay_max": 20, "notes": "Flowering and pod quality decline."},
+    {"stress_key": "drought", "condition_description": "Dry soil during flowering and pod filling.", "effect_growth_percent": -25, "effect_days_delay_min": 4, "effect_days_delay_max": 14, "notes": "Reduces pod fill."},
+    {"stress_key": "hard_frost", "condition_description": "Strong frost after emergence.", "effect_growth_percent": -50, "notes": "Young plants tolerate light cold, but hard frost damages growth."}
+  ],
+  "cultivars": [
+    {"id": "generic_garden_pea", "cultivar_name": "Generic garden pea", "maturity_days_min": 55, "maturity_days_max": 75, "fruits_per_plant_min": 10, "fruits_per_plant_max": 40},
+    {"id": "snow_pea", "cultivar_name": "Snow pea", "maturity_days_min": 55, "maturity_days_max": 70, "fruits_per_plant_min": 15, "fruits_per_plant_max": 50}
+  ]
+}
