@@ -1,0 +1,39 @@
+{
+  "species": {
+    "id": "cucurbita_pepo_zucchini",
+    "latin_name": "Cucurbita pepo",
+    "common_name_bg": "Тиквичка",
+    "common_name_en": "Zucchini / summer squash",
+    "family": "Cucurbitaceae",
+    "life_cycle": "annual",
+    "plant_type": "warm_season_bush_vining_crop",
+    "notes": "Fast warm-season cucurbit grown mainly for immature fruits. Productive, greedy and dramatic, like most useful garden plants."
+  },
+  "ideal_conditions": {
+    "germination": {"soil_temp_c": {"min": 15, "optimum_min": 24, "optimum_max": 30, "max": 35}, "emergence_days": {"min": 4, "max": 8}},
+    "vegetative_growth": {"day_temp_c": {"min": 22, "max": 30}, "night_temp_c": {"min": 16, "max": 22}},
+    "flowering": {"optimum_temp_c": {"min": 20, "max": 30}},
+    "fruiting": {"optimum_temp_c": {"min": 22, "max": 30}},
+    "light": {"sunlight_min_hours": 6, "sunlight_opt_hours": 8},
+    "soil": {"ph_min": 6.0, "ph_max": 7.2, "drainage": "good", "fertility": "high_organic_matter"}
+  },
+  "phenology": [
+    {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
+    {"stage_key": "first_true_leaf", "stage_name_bg": "Първи истински лист", "days_after_emergence_min": 5, "days_after_emergence_max": 10},
+    {"stage_key": "rapid_growth", "stage_name_bg": "Бърз растеж", "days_after_emergence_min": 15, "days_after_emergence_max": 30},
+    {"stage_key": "first_male_flowers", "stage_name_bg": "Първи мъжки цветове", "days_after_emergence_min": 25, "days_after_emergence_max": 40},
+    {"stage_key": "first_female_flowers", "stage_name_bg": "Първи женски цветове", "days_after_emergence_min": 30, "days_after_emergence_max": 45},
+    {"stage_key": "first_harvest", "stage_name_bg": "Първа реколта", "days_after_emergence_min": 40, "days_after_emergence_max": 60},
+    {"stage_key": "seed_maturity", "stage_name_bg": "Узрели семена", "days_after_emergence_min": 80, "days_after_emergence_max": 110}
+  ],
+  "stress_responses": [
+    {"stress_key": "frost", "condition_description": "Air temperature at or below 0°C.", "effect_growth_percent": -100, "notes": "Usually fatal."},
+    {"stress_key": "cold_soil", "condition_description": "Soil below 15°C during germination.", "effect_days_delay_min": 4, "effect_days_delay_max": 12, "notes": "Slow and uneven emergence."},
+    {"stress_key": "drought", "condition_description": "Dry soil during flowering and fruiting.", "effect_growth_percent": -35, "effect_days_delay_min": 4, "effect_days_delay_max": 12, "notes": "Reduces fruit quality and yield."},
+    {"stress_key": "poor_pollination", "condition_description": "Few pollinators or cold/wet flowering period.", "effect_growth_percent": -20, "notes": "Misshapen or aborted fruits."}
+  ],
+  "cultivars": [
+    {"id": "generic_green_zucchini", "cultivar_name": "Generic green zucchini", "maturity_days_min": 40, "maturity_days_max": 55, "average_fruit_weight_kg": 0.25, "fruits_per_plant_min": 8, "fruits_per_plant_max": 30},
+    {"id": "generic_yellow_zucchini", "cultivar_name": "Generic yellow zucchini", "maturity_days_min": 45, "maturity_days_max": 60, "average_fruit_weight_kg": 0.25, "fruits_per_plant_min": 8, "fruits_per_plant_max": 25}
+  ]
+}
