@@ -1,6 +1,6 @@
 {
   "dataset": "plant-db",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "source_repo": "git-rupavlov/plant-db",
   "source_branch": "main",
   "species": [
@@ -52,7 +52,8 @@
       "id": "sofia_bg",
       "name": "Sofia",
       "country": "Bulgaria",
-      "data_url": "public-data/locations/sofia_bg.json"
+      "data_url": "public-data/locations/sofia_bg.json",
+      "climate_url": "public-data/climate/sofia_bg_monthly.json"
     }
   ]
 }
