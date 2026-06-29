@@ -1,31 +1,69 @@
 # Plant DB
 
-Vegetative-period plant database built around one sane principle:
+Remote plant reference database for vegetative-period and phenology modeling.
 
-1. Store **ideal biological conditions** for each species.
-2. Store **cultivar overrides** separately.
-3. Store **location / climate / terrain** separately.
-4. Adapt growth periods dynamically from local climate and observations.
+The database lives in GitHub. The user runs the UI locally. The UI fetches data from GitHub at runtime.
 
-Because plants, in their endless botanical arrogance, refuse to obey one universal calendar.
+No local SQLite requirement. No repo clone requirement. No pretending every user wants to babysit a database file, because apparently we are trying to reduce suffering.
+
+## Core principle
+
+```text
+GitHub repository = source of truth
+Local UI          = viewer / explorer / visualizer
+Local storage     = optional cache only, never authority
+```
 
 ## Initial crop
 
 - `Cucurbita moschata` - тиква цигулка / butternut squash
 
-## Structure
+## Repository structure
 
 ```text
-schema.sql
 plants/
-  cucurbita_moschata.yaml
+  cucurbita_moschata.yaml          # editable source data
 locations/
-  sofia_bg.yaml
+  sofia_bg.yaml                    # editable source location data
+public-data/
+  index.json                       # UI entry point
+  plants/cucurbita_moschata.json   # UI-ready plant data
+  locations/sofia_bg.json          # UI-ready location data
+docs/
+  remote-git-data-architecture.md
+  visualization.md
+examples/
+  remote-client.js
 scripts/
-  load_yaml_to_sqlite.py
+  plot_phenology.py
+schema.sql                         # optional relational reference model
 ```
 
-## Core model
+## UI read path
+
+The local UI should start here:
+
+```text
+https://raw.githubusercontent.com/git-rupavlov/plant-db/main/public-data/index.json
+```
+
+Then load individual records from:
+
+```text
+https://raw.githubusercontent.com/git-rupavlov/plant-db/main/public-data/plants/<species_id>.json
+https://raw.githubusercontent.com/git-rupavlov/plant-db/main/public-data/locations/<location_id>.json
+```
+
+## Runtime model
+
+```text
+Local UI
+  -> fetch GitHub JSON
+  -> parse in memory
+  -> render cards / tables / timelines / charts
+```
+
+## Data model
 
 ```text
 species ideal biology
@@ -40,6 +78,14 @@ weather observations
         =
 adapted phenology prediction
 ```
+
+## Planned visualizations
+
+- Phenology timeline
+- Temperature suitability chart
+- Stress impact badges / bars
+- Local season window overlay
+- GDD progress bar
 
 ## Planned crops
 
