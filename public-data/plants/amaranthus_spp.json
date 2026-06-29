@@ -1,0 +1,40 @@
+{
+  "species": {
+    "id": "amaranthus_spp",
+    "latin_name": "Amaranthus spp.",
+    "common_name_bg": "Амарант / щир",
+    "common_name_en": "Amaranth",
+    "family": "Amaranthaceae",
+    "life_cycle": "annual",
+    "plant_type": "warm_season_leaf_seed_crop",
+    "notes": "Warm-season C4 crop group grown for leaves, seed, biomass and observation. Species and cultivars vary, so this record is a practical generic profile, not botanical scripture carved into stone."
+  },
+  "ideal_conditions": {
+    "germination": {"soil_temp_c": {"min": 15, "optimum_min": 20, "optimum_max": 30, "max": 35}, "emergence_days": {"min": 3, "max": 7}},
+    "vegetative_growth": {"day_temp_c": {"min": 24, "max": 32}, "night_temp_c": {"min": 16, "max": 22}},
+    "flowering": {"optimum_temp_c": {"min": 22, "max": 32}},
+    "fruiting": {"optimum_temp_c": {"min": 22, "max": 32}},
+    "light": {"sunlight_min_hours": 6, "sunlight_opt_hours": 8},
+    "soil": {"ph_min": 6.0, "ph_max": 7.5, "drainage": "good", "fertility": "medium"}
+  },
+  "phenology": [
+    {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
+    {"stage_key": "seedling", "stage_name_bg": "Младо растение", "days_after_emergence_min": 5, "days_after_emergence_max": 15},
+    {"stage_key": "leaf_harvest", "stage_name_bg": "Реколта листна маса", "days_after_emergence_min": 25, "days_after_emergence_max": 45},
+    {"stage_key": "rapid_biomass", "stage_name_bg": "Бърза биомаса", "days_after_emergence_min": 30, "days_after_emergence_max": 65},
+    {"stage_key": "flowering", "stage_name_bg": "Цъфтеж", "days_after_emergence_min": 45, "days_after_emergence_max": 80},
+    {"stage_key": "seed_fill", "stage_name_bg": "Наливане на семена", "days_after_emergence_min": 70, "days_after_emergence_max": 100},
+    {"stage_key": "seed_maturity", "stage_name_bg": "Узрели семена", "days_after_emergence_min": 90, "days_after_emergence_max": 130}
+  ],
+  "stress_responses": [
+    {"stress_key": "cold", "condition_description": "Cool weather below 12-15°C.", "effect_days_delay_min": 5, "effect_days_delay_max": 20, "notes": "Slow growth and poor establishment."},
+    {"stress_key": "frost", "condition_description": "Air temperature at or below 0°C.", "effect_growth_percent": -100, "notes": "Usually fatal."},
+    {"stress_key": "drought", "condition_description": "Extended dry soil after establishment.", "effect_growth_percent": -20, "effect_days_delay_min": 3, "effect_days_delay_max": 12, "notes": "Often tolerant, but biomass and leaf quality decline."},
+    {"stress_key": "shade", "condition_description": "Less than 5-6 hours direct sun.", "effect_growth_percent": -30, "effect_days_delay_min": 7, "effect_days_delay_max": 20, "notes": "Reduced biomass and seed maturity."}
+  ],
+  "cultivars": [
+    {"id": "red_garnet", "cultivar_name": "Red Garnet", "maturity_days_min": 90, "maturity_days_max": 120, "average_fruit_weight_kg": 0, "fruits_per_plant_min": 0, "fruits_per_plant_max": 0},
+    {"id": "green_garnet", "cultivar_name": "Green Garnet", "maturity_days_min": 90, "maturity_days_max": 120, "average_fruit_weight_kg": 0, "fruits_per_plant_min": 0, "fruits_per_plant_max": 0},
+    {"id": "generic_grain_amaranth", "cultivar_name": "Generic grain amaranth", "maturity_days_min": 90, "maturity_days_max": 130, "average_fruit_weight_kg": 0, "fruits_per_plant_min": 0, "fruits_per_plant_max": 0}
+  ]
+}
