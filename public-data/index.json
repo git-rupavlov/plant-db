@@ -1,6 +1,6 @@
 {
   "dataset": "plant-db",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source_repo": "git-rupavlov/plant-db",
   "source_branch": "main",
   "species": [
@@ -10,6 +10,41 @@
       "common_name_bg": "Тиква цигулка / мускатна тиква",
       "common_name_en": "Butternut / winter squash",
       "data_url": "public-data/plants/cucurbita_moschata.json"
+    },
+    {
+      "id": "solanum_lycopersicum",
+      "latin_name": "Solanum lycopersicum",
+      "common_name_bg": "Домат",
+      "common_name_en": "Tomato",
+      "data_url": "public-data/plants/solanum_lycopersicum.json"
+    },
+    {
+      "id": "phaseolus_vulgaris",
+      "latin_name": "Phaseolus vulgaris",
+      "common_name_bg": "Фасул / зелен боб",
+      "common_name_en": "Common bean",
+      "data_url": "public-data/plants/phaseolus_vulgaris.json"
+    },
+    {
+      "id": "pisum_sativum",
+      "latin_name": "Pisum sativum",
+      "common_name_bg": "Грах",
+      "common_name_en": "Pea",
+      "data_url": "public-data/plants/pisum_sativum.json"
+    },
+    {
+      "id": "cucurbita_pepo_zucchini",
+      "latin_name": "Cucurbita pepo",
+      "common_name_bg": "Тиквичка",
+      "common_name_en": "Zucchini / summer squash",
+      "data_url": "public-data/plants/cucurbita_pepo_zucchini.json"
+    },
+    {
+      "id": "amaranthus_spp",
+      "latin_name": "Amaranthus spp.",
+      "common_name_bg": "Амарант / щир",
+      "common_name_en": "Amaranth",
+      "data_url": "public-data/plants/amaranthus_spp.json"
     }
   ],
   "locations": [
