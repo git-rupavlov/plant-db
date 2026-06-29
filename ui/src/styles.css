@@ -220,9 +220,26 @@ th {
 }
 
 .diagram {
-  min-height: 240px;
+  min-height: 260px;
   display: grid;
   place-items: center;
+  overflow-x: auto;
+  padding: 12px;
+}
+
+.diagram svg {
+  max-width: 100%;
+  height: auto;
+  min-height: 220px;
+}
+
+.diagram-fallback {
+  white-space: pre-wrap;
+  color: #ffb4b4;
+  background: rgba(255, 120, 120, 0.08);
+  border: 1px solid rgba(255, 120, 120, 0.3);
+  border-radius: 14px;
+  padding: 16px;
   overflow-x: auto;
 }
 
