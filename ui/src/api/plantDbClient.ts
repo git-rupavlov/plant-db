@@ -1,9 +1,10 @@
-import type { PlantDbIndex, PlantRecord } from "../types";
+import type { ClimateProfile, PlantDbIndex, PlantRecord } from "../types";
 
 const BASE_URL = "https://raw.githubusercontent.com/git-rupavlov/plant-db/main/public-data";
 
 async function fetchJson<T>(path: string): Promise<T> {
-  const url = `${BASE_URL}/${path}`;
+  const normalizedPath = path.replace(/^public-data\//, "");
+  const url = `${BASE_URL}/${normalizedPath}`;
   const response = await fetch(url, {
     headers: { Accept: "application/json" },
     cache: "no-store"
@@ -22,4 +23,8 @@ export function loadIndex(): Promise<PlantDbIndex> {
 
 export function loadPlant(speciesId: string): Promise<PlantRecord> {
   return fetchJson<PlantRecord>(`plants/${speciesId}.json`);
+}
+
+export function loadClimate(path: string): Promise<ClimateProfile> {
+  return fetchJson<ClimateProfile>(path);
 }
