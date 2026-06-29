@@ -1,38 +1,15 @@
 {
-  "species": {
-    "id": "phaseolus_vulgaris",
-    "latin_name": "Phaseolus vulgaris",
-    "common_name_bg": "Фасул / зелен боб",
-    "common_name_en": "Common bean",
-    "family": "Fabaceae",
-    "life_cycle": "annual",
-    "plant_type": "warm_season_legume",
-    "notes": "Warm-season legume. Useful for food, nitrogen fixation and vertical biomass, but it still demands warmth because apparently beans have standards."
-  },
-  "ideal_conditions": {
-    "germination": {"soil_temp_c": {"min": 12, "optimum_min": 21, "optimum_max": 30, "max": 35}, "emergence_days": {"min": 5, "max": 10}},
-    "vegetative_growth": {"day_temp_c": {"min": 20, "max": 28}, "night_temp_c": {"min": 15, "max": 20}},
-    "flowering": {"optimum_temp_c": {"min": 20, "max": 27}},
-    "fruiting": {"optimum_temp_c": {"min": 20, "max": 28}},
-    "light": {"sunlight_min_hours": 6, "sunlight_opt_hours": 8},
-    "soil": {"ph_min": 6.0, "ph_max": 7.5, "drainage": "good", "fertility": "medium"}
-  },
-  "phenology": [
-    {"stage_key": "emergence", "stage_name_bg": "Поникване", "days_after_emergence_min": 0, "days_after_emergence_max": 0},
-    {"stage_key": "first_true_leaves", "stage_name_bg": "Първи истински листа", "days_after_emergence_min": 5, "days_after_emergence_max": 12},
-    {"stage_key": "rapid_vine_growth", "stage_name_bg": "Бърз вегетативен растеж", "days_after_emergence_min": 15, "days_after_emergence_max": 30},
-    {"stage_key": "first_flowers", "stage_name_bg": "Първи цветове", "days_after_emergence_min": 30, "days_after_emergence_max": 45},
-    {"stage_key": "green_pods", "stage_name_bg": "Зелени шушулки", "days_after_emergence_min": 45, "days_after_emergence_max": 65},
-    {"stage_key": "dry_seed", "stage_name_bg": "Сухо семе", "days_after_emergence_min": 80, "days_after_emergence_max": 110}
+  "species": {"id":"phaseolus_vulgaris","latin_name":"Phaseolus vulgaris","common_name_bg":"Фасул / зелен боб","common_name_en":"Common bean","family":"Fabaceae","life_cycle":"annual","plant_type":"warm_season_legume","notes":"Warm-season legume with stage-specific needs for germination, vegetative growth, flowering and pod filling."},
+  "ideal_conditions": {"germination":{"soil_temp_c":{"min":12,"optimum_min":21,"optimum_max":30,"max":35},"emergence_days":{"min":5,"max":10}},"vegetative_growth":{"day_temp_c":{"min":20,"max":28},"night_temp_c":{"min":15,"max":20}},"flowering":{"optimum_temp_c":{"min":20,"max":27}},"fruiting":{"optimum_temp_c":{"min":20,"max":28}},"light":{"sunlight_min_hours":6,"sunlight_opt_hours":8},"soil":{"ph_min":6.0,"ph_max":7.5,"drainage":"good","fertility":"medium"}},
+  "growth_stages": [
+    {"stage_key":"germination","stage_name_bg":"Покълване","stage_type":"start","days_after_emergence_min":-10,"days_after_emergence_max":0,"requirements":{"soil_temp_c":{"min":12,"optimum_min":21,"optimum_max":30,"max":35},"air_temp_c":{"min":15,"optimum_min":20,"optimum_max":28,"max":34},"sunlight_hours":{"min":0,"optimum_min":0,"optimum_max":12},"soil_moisture_percent":{"min":55,"optimum_min":65,"optimum_max":80,"max":90},"water_need":"even_moist"},"limiting_factors":["cold_soil","waterlogging","frost"]},
+    {"stage_key":"seedling","stage_name_bg":"Младо растение","stage_type":"establishment","days_after_emergence_min":0,"days_after_emergence_max":15,"requirements":{"air_temp_c":{"min":14,"optimum_min":20,"optimum_max":26,"max":32},"soil_temp_c":{"min":14,"optimum_min":18,"optimum_max":26,"max":32},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"soil_moisture_percent":{"min":45,"optimum_min":55,"optimum_max":75,"max":85},"water_need":"moderate_even","nutrient_need":"low_nitrogen_balanced"},"limiting_factors":["cold","shade","damping_off"]},
+    {"stage_key":"vegetative_growth","stage_name_bg":"Вегетативен растеж","stage_type":"growth","days_after_emergence_min":15,"days_after_emergence_max":35,"requirements":{"air_temp_c":{"min":16,"optimum_min":20,"optimum_max":28,"max":34},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"soil_moisture_percent":{"min":45,"optimum_min":55,"optimum_max":75,"max":85},"water_need":"moderate","nutrient_need":"low_nitrogen_legume"},"limiting_factors":["shade","drought","excess_nitrogen"]},
+    {"stage_key":"flowering_pod_set","stage_name_bg":"Цъфтеж и завръз","stage_type":"reproduction","days_after_emergence_min":30,"days_after_emergence_max":55,"requirements":{"air_temp_c":{"min":16,"optimum_min":20,"optimum_max":27,"max":32},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"soil_moisture_percent":{"min":50,"optimum_min":60,"optimum_max":75,"max":85},"water_need":"stable_moderate","nutrient_need":"phosphorus_potassium_balanced"},"limiting_factors":["drought","heat","cold","excess_nitrogen"]},
+    {"stage_key":"pod_growth","stage_name_bg":"Нарастване на шушулки","stage_type":"yield_building","days_after_emergence_min":45,"days_after_emergence_max":75,"requirements":{"air_temp_c":{"min":16,"optimum_min":20,"optimum_max":28,"max":34},"sunlight_hours":{"min":6,"optimum_min":8,"optimum_max":14},"soil_moisture_percent":{"min":50,"optimum_min":60,"optimum_max":80,"max":90},"water_need":"moderate_high","nutrient_need":"potassium_balanced"},"limiting_factors":["drought","heat","low_potassium"]},
+    {"stage_key":"seed_maturity","stage_name_bg":"Узряване на семе","stage_type":"seed","days_after_emergence_min":80,"days_after_emergence_max":110,"requirements":{"air_temp_c":{"min":14,"optimum_min":18,"optimum_max":26,"max":32},"sunlight_hours":{"min":5,"optimum_min":7,"optimum_max":12},"soil_moisture_percent":{"min":25,"optimum_min":35,"optimum_max":55,"max":75},"water_need":"low_dry_finish"},"limiting_factors":["rainy_finish","frost","cold"]}
   ],
-  "stress_responses": [
-    {"stress_key": "cold_soil", "condition_description": "Soil below 12°C during germination.", "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "Poor emergence and seed rot risk."},
-    {"stress_key": "frost", "condition_description": "Air temperature at or below 0°C.", "effect_growth_percent": -100, "notes": "Usually fatal."},
-    {"stress_key": "drought_flowering", "condition_description": "Dry soil during flowering and pod set.", "effect_growth_percent": -30, "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "Reduces pod set."},
-    {"stress_key": "nitrogen_excess", "condition_description": "Excess available nitrogen.", "effect_days_delay_min": 5, "effect_days_delay_max": 15, "notes": "More leaf growth, weaker pod focus."}
-  ],
-  "cultivars": [
-    {"id": "generic_bush_bean", "cultivar_name": "Generic bush bean", "maturity_days_min": 45, "maturity_days_max": 60, "fruits_per_plant_min": 15, "fruits_per_plant_max": 40},
-    {"id": "generic_pole_bean", "cultivar_name": "Generic pole bean", "maturity_days_min": 60, "maturity_days_max": 85, "fruits_per_plant_min": 30, "fruits_per_plant_max": 100}
-  ]
+  "phenology": [{"stage_key":"emergence","stage_name_bg":"Поникване","days_after_emergence_min":0,"days_after_emergence_max":0},{"stage_key":"first_true_leaves","stage_name_bg":"Първи истински листа","days_after_emergence_min":5,"days_after_emergence_max":12},{"stage_key":"rapid_vine_growth","stage_name_bg":"Бърз вегетативен растеж","days_after_emergence_min":15,"days_after_emergence_max":30},{"stage_key":"first_flowers","stage_name_bg":"Първи цветове","days_after_emergence_min":30,"days_after_emergence_max":45},{"stage_key":"green_pods","stage_name_bg":"Зелени шушулки","days_after_emergence_min":45,"days_after_emergence_max":65},{"stage_key":"dry_seed","stage_name_bg":"Сухо семе","days_after_emergence_min":80,"days_after_emergence_max":110}],
+  "stress_responses": [{"stress_key":"cold_soil","condition_description":"Soil below 12°C during germination.","effect_days_delay_min":5,"effect_days_delay_max":15,"notes":"Poor emergence and seed rot risk."},{"stress_key":"frost","condition_description":"Air temperature at or below 0°C.","effect_growth_percent":-100,"notes":"Usually fatal."},{"stress_key":"drought_flowering","condition_description":"Dry soil during flowering and pod set.","effect_growth_percent":-30,"effect_days_delay_min":5,"effect_days_delay_max":15,"notes":"Reduces pod set."},{"stress_key":"nitrogen_excess","condition_description":"Excess available nitrogen.","effect_days_delay_min":5,"effect_days_delay_max":15,"notes":"More leaf growth, weaker pod focus."}],
+  "cultivars": [{"id":"generic_bush_bean","cultivar_name":"Generic bush bean","maturity_days_min":45,"maturity_days_max":60,"fruits_per_plant_min":15,"fruits_per_plant_max":40},{"id":"generic_pole_bean","cultivar_name":"Generic pole bean","maturity_days_min":60,"maturity_days_max":85,"fruits_per_plant_min":30,"fruits_per_plant_max":100}]
 }
