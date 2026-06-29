@@ -60,9 +60,35 @@ export interface PlantRecord {
     notes?: string;
   };
   ideal_conditions: IdealConditions;
+  growth_stages?: GrowthStage[];
   phenology: PhenologyStage[];
   stress_responses: StressResponse[];
   cultivars: Cultivar[];
+}
+
+export interface GrowthStage {
+  stage_key: string;
+  stage_name_bg: string;
+  stage_type?: string;
+  days_after_emergence_min: number;
+  days_after_emergence_max: number;
+  requirements: StageRequirements;
+  limiting_factors?: string[];
+}
+
+export interface StageRequirements {
+  air_temp_c?: RangeWithOptimum;
+  soil_temp_c?: RangeWithOptimum;
+  sunlight_hours?: {
+    min: number;
+    optimum_min: number;
+    optimum_max: number;
+  };
+  humidity_percent?: RangeWithOptimum;
+  soil_moisture_percent?: RangeWithOptimum;
+  water_need?: string;
+  nutrient_need?: string;
+  pollinator_activity?: string;
 }
 
 export interface IdealConditions {
